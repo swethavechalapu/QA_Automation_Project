@@ -7,7 +7,7 @@ public class HomePage {
 
     WebDriver driver;
     By profileNameElement = By.xpath("//div[contains(@class,'profile-name')]");
-
+    By quickActionHeading = By.xpath("//div[text()='Quick Actions']");
     public HomePage(WebDriver driver) {
         this.driver = driver;
     }
@@ -18,5 +18,10 @@ public class HomePage {
         System.out.println("Profile Name : " +profileName);
         return profileName;
 
+    }
+    public boolean isQuickActionPresent(){
+      boolean quickActionIsDisplayed =  driver.findElement(quickActionHeading).isDisplayed();
+        System.out.println("Quick Action Heading Is :" +quickActionIsDisplayed);
+      return quickActionIsDisplayed;
     }
 }
