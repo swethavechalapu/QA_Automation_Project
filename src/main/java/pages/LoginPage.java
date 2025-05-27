@@ -10,6 +10,7 @@ public class LoginPage {
     By loginButton   = By.xpath("//button[normalize-space()='Sign In']");
 
     public LoginPage(WebDriver driver) {
+
         this.driver = driver;
     }
 

@@ -14,13 +14,13 @@ public class BaseTest {
     public void setup() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         System.out.println("Driver initialized successfully");
         driver.manage().window().maximize();
     }
 
     @AfterClass
-    public void tearDown() {
+    public void closeBrowser() {
         driver.quit();
         System.out.println("Driver Closed successfully");
     }
